@@ -18,7 +18,7 @@ const AdvisorDetails = ({ advisor, acceptCallback, rejectCallback, formData}) =>
        setButtonDisabled(advisor.status.toLowerCase() !== "pending");
 
        // Fetch initial profile data
-      //  getAdvisorProfile(advisor.movie_id);
+       getAdvisorProfile(advisor.movie_id);
     }
  }, [advisor]);
   const getAdvisorProfile = (advisor_id) => {
@@ -28,9 +28,11 @@ const AdvisorDetails = ({ advisor, acceptCallback, rejectCallback, formData}) =>
       .then((advisor) => {
         setAdvisorProfile(advisor);
         setShowAdvisorProfile(true);
+        console.log("Success");
       })
       .catch((error) => {
         console.log(error);
+        console.log("Error fetching advisor profile")
       })
       .finally(() => {
         setLoading(false);
