@@ -68,7 +68,7 @@ export default function AdvisorsWidget({ currentAdvisors }) {
           selectCallback={handleSelect}
         />
       </Col>
-      {activeSelection && (
+      {/* {activeSelection && ( */}
         <Col style={{ display: 'flex', flex: 3}}>
           <AdvisorDetails
             advisor={activeSelection}
@@ -78,7 +78,7 @@ export default function AdvisorsWidget({ currentAdvisors }) {
             formData={formData}
           />
         </Col>
-      )}
+      {/* )} */}
       {activeSelection && (
       <Col style={{ display: 'flex', flex: 1}}>
         {!approvalPressed && (
