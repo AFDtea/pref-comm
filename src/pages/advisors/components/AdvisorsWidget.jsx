@@ -5,6 +5,7 @@ import RecommendationForm from "./RecommendationForm";
 import AdvisorRecommendations from "./AdvisorRecommendations";
 import "./AdvisorsWidget.css";
 import {Button, Col, Row} from "react-bootstrap";
+import {getAdvisorProfile} from "./AdvisorDetails";
 
 function mapReplace(arr, prop, propval, callback) {
   return arr.map((item) => {
@@ -26,6 +27,7 @@ export default function AdvisorsWidget({ currentAdvisors }) {
   const handleSelect = (advisorid) => {
     const selectedAdvisor = advisors.find((advisor) => advisor.id === advisorid);
     setActiveSelection(selectedAdvisor);
+    console.log("Selected advisor:", selectedAdvisor);
     setApprovalPressed(false); // Reset the state when selecting a new advisor
     setFormData({}); // Reset the form data when selecting a new advisor
   };

@@ -30,10 +30,19 @@ const AdvisorDetails = ({ advisor, acceptCallback, rejectCallback, formData}) =>
         setShowAdvisorProfile(true);
         console.log("Success");
       })
-      .catch((error) => {
-        console.log(error);
-        console.log("Error fetching advisor profile")
-      })
+          .catch((error) => {
+      // Check if the error message contains a specific substring related to CORS
+      // This is just an example and might not work for all cases since CORS errors
+      // might not pass detailed information to the JavaScript context
+      if (error.message.includes("CORS")) {
+        // console.log(error);
+        console.log("Error fetching advisor profile");
+      }
+      else{
+        console.log("Need to change if statement");
+      }
+      // If the error is CORS-related, this block will not execute
+    })
       .finally(() => {
         setLoading(false);
       });
