@@ -18,7 +18,7 @@ const AdvisorDetails = ({ advisor, acceptCallback, rejectCallback, formData}) =>
        setButtonDisabled(advisor.status.toLowerCase() !== "pending");
 
        // Fetch initial profile data
-       getAdvisorProfile(advisor.movie_id);
+      //  getAdvisorProfile(advisor.movie_id);
     }
  }, [advisor]);
   const getAdvisorProfile = (advisor_id) => {
